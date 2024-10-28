@@ -335,7 +335,7 @@ athlete_html_bruno = athlete_template.render(
     season_year="2024",
     races_2024_table=bruno_races_table_2024,  # Now passing the races table
     all_records_table=bruno_table,
-    season_notes="<li>2023: PR</li> <li>2024: Coming Perf.</li>"
+    season_notes="<li>2023: PR</li> <li>2024: PR</li>"
 )
 with open("athlete-bruno.html", "w") as f:
     f.write(athlete_html_bruno)
