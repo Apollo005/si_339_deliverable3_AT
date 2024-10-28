@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Athlete Photos - {{ athlete_name }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body id="top">
+    <header>
+        <a href="index.html" class="nav-home-button">HOME</a>
+        <form action="#" method="get" class="search-form">
+            <label for="search-input" class="sr-only">Search Athlete</label>
+            <input id="search-input" type="text" placeholder="Search Athlete" name="q">
+            <button type="submit" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </header>  
+
+    <main>
+
+        <section class="photo-gallery">
+            <h1>Photo Gallery</h1>
+            <div class="photo-grid">
+                <div class="photo-item">
+                    <img src="img/IMG_9419_V2F_2024-09-21_09-35-11_800.jpg" alt="Athlete in action 1">
+                </div>
+                <div class="photo-item">
+                    <img src="img/IMG_9419_V2F_2024-09-21_09-35-12_500.jpg" alt="Athlete in action 2">
+                </div>
+                <div class="photo-item">
+                    <img src="img/IMG_9419_V2F_2024-09-21_09-35-14_700.jpg" alt="Athlete in action 3">
+                </div>
+                <div class="photo-item">
+                    <img src="img/IMG_9419_V2F_2024-09-21_09-35-16_933.jpg" alt="Athlete in action 4">
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer-container">
+        <p>Created by Kaelyn Lin, Nick Pisarczyk, and Aditya Tambe for SI 339</p>
+        <a href="#top" class="top2">Back to top</a>
+    </footer>
+</body>
+</html>
