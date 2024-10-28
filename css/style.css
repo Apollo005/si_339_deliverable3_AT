@@ -1,0 +1,509 @@
+/* Import fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap');
+
+/* Root Variables */
+:root {
+    /* Typography */
+    --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem); /* Small font size with responsive scaling */
+    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem); /* Base font size */
+    --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem); /* Medium font size */
+    --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem); /* Large font size */
+    --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem); /* Extra-large font size */
+    
+    --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; /* Primary font family */
+    --font-family-secondary: 'Roboto', sans-serif; /* Secondary font family */
+    
+    /* Colors */
+    --bg-color: #f5f9fc; /* Background color for the body */
+    --text-color: #000; /* Default text color */
+    --header-bg: #67bae7; /* Background color for the header */
+    --progress-bar: #67bae7; /* Color for the progress bar */
+    --text-prog: #000; /* Text color for the progress bar */
+    --footer-bg: #f0f0f0; /* Background color for the footer */
+    --row-even: #f0f0f012; /* Background color for even table rows */
+    --row-odd: #fff; /* Background color for odd table rows */
+    --photos-color: #67bae7; /* Color for photo-related elements */
+    --photos-text-color: #000; /* Text color for photo-related elements */
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-family-primary); /* Set primary font for body text */
+    font-size: var(--font-size-base); /* Set base font size */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: var(--bg-color); /* Set background color */
+    color: var(--text-color); /* Set text color */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    line-height: 1.5; /* Set line height for readability */
+    width: 100%; /* Ensure full width */
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-secondary); /* Use secondary font for headings */
+    font-weight: 600; /* Set font weight for headings */
+    line-height: 1.2; /* Set line height for headings */
+    margin-bottom: 0.75rem; /* Add space below headings */
+}
+
+h1 { font-size: var(--font-size-xl); } /* Set font size for h1 */
+h2 { 
+    font-size: var(--font-size-lg); /* Set font size for h2 */
+    padding: 15px; /* Add padding around h2 */
+    margin: 0; /* Remove default margin */
+    background-color: var(--header-bg); /* Set background color for h2 */
+    color: var(--text-color); /* Set text color for h2 */
+    border-top-left-radius: 10px; /* Round top-left corner */
+    border-top-right-radius: 10px; /* Round top-right corner */
+}
+
+/* Layout */
+header, .athlete {
+    position: fixed; /* Fix header position at the top */
+    width: 100%; /* Set width to full */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Align to the left side */
+    z-index: 10; /* Ensure header is above other content */
+    background-color: var(--header-bg); /* Set header background color */
+    padding: 15px; /* Add padding around header */
+    display: flex; /* Use flexbox for header layout */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    text-align: center; /* Center text in header */
+}
+
+.athlete .profile-details {
+    text-align: center; /* Center text in profile details */
+    width: 100%; /* Set width to full */
+}
+
+.athlete .profile-details h1 { /* Style for athlete's name */
+    width: 100%; /* Set width to full */
+    text-align: center; /* Center text */
+}
+
+main {
+    max-width: 1600px; /* Set maximum width for main content */
+    margin: 0 auto; /* Center main content horizontally */
+    padding: 80px 20px; /* Add padding around main content */
+}
+
+footer {
+    background-color: var(--footer-bg); /* Set footer background color */
+    padding: 15px; /* Add padding around footer */
+    display: flex; /* Use flexbox for footer layout */
+    justify-content: space-between; /* Space items evenly */
+    align-items: center; /* Center items vertically */
+    width: 100%; /* Set width to full */
+}
+
+/* Navigation */
+.nav-home-button,
+.photos-button,
+.button {
+    font-weight: 600; /* Set font weight for navigation button */
+    text-decoration: none; /* Remove underline from link */
+    color: var(--text-color); /* Set text color for button */
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
+    padding: 8px 16px; /* Add padding around button */
+    background-color: var(--photos-color); /* Set transparent background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease;
+}
+
+.nav-home-button:hover,
+.photos-button:hover,
+.button:hover {
+    background-color: var(--button-hover);
+    color: var(--photos-text-color);
+}
+
+/* Search Form */
+.search-form {
+    position: relative; /* Position relative for absolute children */
+    display: flex; /* Use flexbox for search form layout */
+    align-items: center; /* Center items vertically */
+    margin-right: 20px; /* Add space to the right */
+}
+
+.search-form input {
+    padding: 10px 40px 10px 10px; /* Add padding inside the input field */
+    border: 1px solid #ddd; /* Set border for input field */
+    border-radius: 5px; /* Round corners of the input field */
+    outline: none; /* Remove default outline on focus */
+    font-size: var(--font-size-sm); /* Set font size for input */
+}
+
+.search-form button {
+    position: absolute; /* Position button inside input field */
+    right: 10px; /* Align button to the right */
+    background: none; /* Set transparent background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    color: #1e445d; /* Set button color */
+    font-size: 1.2em; /* Set font size for button */
+}
+
+/* Profile Header */
+.profile-header {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: 150px 1fr; /* Two columns: fixed width for profile picture, flexible for details */
+    align-items: center; /* Center items vertically within grid */
+    gap: 20px; /* Space between grid items */
+    padding: 20px 0; /* Padding above and below the header */
+    border-bottom: 1px solid #ccc; /* Bottom border for separation */
+}
+
+.profile-picture {
+    width: 150px; /* Fixed width for profile picture */
+    height: 150px; /* Fixed height for profile picture */
+    background-color: #e0e0e0; /* Placeholder background color */
+    border-radius: 50%; /* Round shape for profile picture */
+    overflow: hidden; /* Hide overflow to maintain shape */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.profile-picture img {
+    width: 100%; /* Responsive width */
+    height: 100%; /* Responsive height */
+    object-fit: cover; /* Maintain aspect ratio of the image */
+}
+
+.profile-details {
+    flex-grow: 1; /* Allow details to grow to fill available space */
+    min-width: 0; /* Prevent overflow */
+}
+
+.profile-details h1 {
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Hide overflow to avoid layout shift */
+    text-overflow: ellipsis; /* Show ellipsis for overflowed text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.profile-details p {
+    margin-top: 5px; /* Add margin above paragraph */
+    font-size: clamp(1rem, 2vw, 1.2rem); /* Responsive font size */
+}
+
+.photos-button {
+    margin-top: 10px; /* Space above button */
+    padding: 8px 12px; /* Padding inside button */
+    background-color: var(--photos-color); /* Background color from variables */
+    color: var(--photos-text-color); /* Text color from variables */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: clamp(0.8rem, 1.5vw, 1rem); /* Responsive font size */
+}
+
+.photos-button:hover {
+    background-color: #008fcc; /* Change background color on hover */
+}
+
+/* Meet Results and Table Section */
+.meet-results {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between grid items */
+    margin-top: 20px; /* Space above the results section */
+}
+
+.season-box {
+    border: 1px solid #ddd; /* Border for season box */
+    background-color: var(--bg-color); /* Background color from variables */
+    padding: 0; /* No padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+}
+
+/* Table Styling */
+.table-container {
+    width: 100%; /* Full width for table container */
+    overflow-x: auto; /* Allow horizontal scrolling for small screens */
+    margin-bottom: 20px; /* Space below the table */
+}
+
+table {
+    width: 100%; /* Full width for table */
+    border-collapse: collapse; /* Collapse borders between cells */
+    font-size: var(--font-size-sm); /* Use small font size */
+}
+
+th, td {
+    padding: 10px; /* Padding inside cells */
+    text-align: center; /* Center text in cells */
+    border: none; /* No border for cells */
+}
+
+th {
+    position: sticky; /* Stick to the top when scrolling */
+    top: 0; /* Stick to the top */
+    background-color: var(--header-bg); /* Background color from variables */
+    color: var(--text-color); /* Text color from variables */
+    font-weight: 600; /* Bold text for header */
+}
+
+/* Zebra Striping for Table Rows */
+tr:nth-child(even) { background-color: var(--row-even); } /* Style for even rows */
+tr:nth-child(odd) { background-color: var(--row-odd); } /* Style for odd rows */
+
+/* Progress Bar */
+.progress-bar-container {
+    width: 100%; /* Full width for the progress bar container */
+    background-color: white; /* Background color for the container */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    height: 30px; /* Fixed height for progress bar */
+    position: relative; /* Positioning context for child elements */
+}
+
+.progress-bar {
+    height: 100%; /* Full height of container */
+    background-color: var(--progress-bar); /* Background color from variables */
+    color: var(--text-prog); /* Text color from variables */
+    text-align: center; /* Center text in the progress bar */
+    line-height: 30px; /* Center text vertically */
+    font-size: 14px; /* Fixed font size */
+    border-radius: 8px 0 0 8px; /* Rounded left corners */
+    animation: fillProgress 2s ease-in-out forwards; /* Animation on fill */
+}
+
+/* Keyframes for Progress Bar Animation */
+@keyframes fillProgress {
+    from { width: 0; } /* Start width */
+    to { width: 75%; } /* End width */
+}
+
+/* Theme Controls */
+.dark-mode-toggle, .high-contrast-toggle {
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 10px; /* Padding inside buttons */
+    background-color: var(--header-bg); /* Background color from variables */
+    color: var(--text-color); /* Text color from variables */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 10px; /* Margin around buttons */
+    font-size: clamp(0.8rem, 1.5vw, 1rem); /* Responsive font size */
+}
+
+/* Hover Effects for Theme Controls */
+.dark-mode-toggle:hover, .high-contrast-toggle:hover,
+.photos-button:hover {
+    background-color: var(--text-color); /* Change background color on hover */
+    color: var(--header-bg); /* Change text color on hover */
+}
+
+/* Dark Mode */
+.dark-mode {
+    --bg-color: #2c2c2c; /* Dark background color */
+    --text-color: #fff; /* Light text color */
+    --header-bg: #13354c; /* Dark header background */
+    --progress-bar: #000000; /* Dark progress bar */
+    --text-prog: #fff; /* Light text in progress bar */
+    --footer-bg: #1b1a1a; /* Dark footer background */
+    --row-even: #211f1f; /* Dark even row background */
+    --row-odd: #2c2c2c; /* Dark odd row background */
+    --photos-color: #211f1f; /* Dark photos button background */
+    --photos-text-color: #fff; /* Light text color for photos button */
+}
+
+/* High-Contrast Mode */
+.high-contrast-mode {
+    --bg-color: #000; /* Black background */
+    --text-color: #ff0; /* Yellow text color */
+    --header-bg: #000; /* Black header background */
+    --progress-bar: #ff0; /* Yellow progress bar */
+    --text-prog: #000; /* Black text in progress bar */
+    --footer-bg: #000; /* Black footer background */
+    --row-even: #121212eb; /* Very dark even row background */
+    --row-odd: #000; /* Black odd row background */
+    --photos-color: #121212eb; /* Very dark photos button background */
+    --photos-text-color: #ff0; /* Yellow text color for photos button */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .meet-results {
+        grid-template-columns: 1fr; /* Change to a single column layout */
+    }
+
+    .athlete, header, footer {
+        flex-wrap: wrap; /* Allow wrapping of flex items */
+        justify-content: center; /* Center items */
+        padding: 8px; /* Add padding */
+        width: 100%; /* Full width */
+    }
+
+    .nav-home-button { order: 1; } /* Adjust order for mobile */
+    .search-form { 
+        order: 2; 
+        width: 50%; /* Set width for search form */
+        min-width: unset; /* Remove minimum width */
+    }
+    .profile-details { 
+        order: 3; /* Adjust order for mobile */
+        text-align: center; /* Center text */
+        width: 100%; /* Full width */
+        margin: 5px 0; /* Margin above and below */
+    }
+    .profile-details h1 { margin: 0; } /* Remove margin from heading */
+
+    /* Responsive Table Styles for Mobile Devices */
+    table, thead, tbody, th, td, tr {
+        display: block; /* Set display to block for all table elements for stacking */
+        width: 100%; /* Full width for all elements */
+    }
+
+    thead { 
+        display: none; /* Hide the table header for mobile view */
+    }
+
+    tbody tr {
+        display: flex; /* Use flexbox for rows to stack content vertically */
+        flex-direction: column; /* Stack items in a column */
+        margin-bottom: 15px; /* Space below each row */
+        background-color: var(--bg-color); /* Background color from variables */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        border-radius: 8px; /* Rounded corners for each row */
+        padding: 10px; /* Padding inside each row */
+    }
+
+    td {
+        display: flex; /* Use flexbox for table data cells */
+        justify-content: space-between; /* Space out content evenly within cells */
+        padding: 10px 0; /* Vertical padding for cells */
+        font-weight: 600; /* Bold text for emphasis */
+    }
+
+    /* Label for each table cell, using data attributes */
+    td::before {
+        content: attr(data-label); /* Use the value of data-label attribute as content */
+        font-weight: bold; /* Bold text for labels */
+        color: var(--header-bg); /* Color from variables for consistency */
+        flex: 1; /* Allow label to grow and take up available space */
+        text-align: left; /* Align label text to the left */
+    }
+}
+
+/* Athlete Details in Index Page */
+.athlete-row {
+    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+}
+
+.athlete-details {
+    display: none; /* Hide details by default */
+}
+
+.athlete-details.expanded {
+    display: table-row; /* Show details when expanded */
+}
+
+.details-content {
+    padding: 10px; /* Padding for content inside details */
+    background-color: var(--bg-color); /* Background color from variables */
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    margin-top: 40px; /* Space above the photo gallery section */
+}
+
+.photo-grid {
+    display: grid; /* Set up grid layout for photos */
+    grid-template-columns: repeat(2, 1fr); /* Two columns, each taking equal space */
+    gap: 20px; /* Space between photo items */
+}
+
+.photo-item {
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    overflow: hidden; /* Hide overflow to prevent image spill */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.photo-item img {
+    width: 100%; /* Full width for responsive image */
+    height: 100%; /* Full height to maintain aspect ratio */
+    object-fit: cover; /* Crop image to cover container */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.photo-item:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Back to Top Link */
+.top2 {
+    position: fixed; /* Fix position on screen */
+    bottom: 20px; /* Position 20px from bottom */
+    right: 20px; /* Position 20px from right */
+    background-color: var(--header-bg); /* Background color from variables */
+    color: var(--text-color); /* Text color from variables */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 8px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    font-size: var(--font-size-sm); /* Small font size */
+    font-weight: 600; /* Bold text */
+    opacity: 0.9; /* Slightly transparent */
+    transition: all 0.3s ease; /* Smooth transitions on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1000; /* Place above other elements */
+}
+
+.top2::before {
+    content: "\2191"; /* Unicode up arrow symbol */
+    font-size: 24px; /* Large arrow icon */
+    font-weight: bold; /* Bold arrow */
+}
+
+.top2:hover, .top2:focus {
+    opacity: 1; /* Full opacity on hover */
+    background-color: var(--text-color); /* Switch background color */
+    color: var(--header-bg); /* Switch text color */
+    transform: translateY(-3px); /* Slight upward movement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center-align text */
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+
+    .search-form {
+        width: 100%; /* Full width on small screens */
+        margin-top: 10px; /* Space above search form */
+    }
+
+    .search-form input {
+        width: 100%; /* Full width for input field */
+    }
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute; /* Remove from flow but keep accessibility */
+    width: 1px; /* Minimize width */
+    height: 1px; /* Minimize height */
+    padding: 0; /* Remove padding */
+    margin: -1px; /* Negative margin to hide */
+    overflow: hidden; /* Hide overflow */
+    clip: rect(0, 0, 0, 0); /* Clip content */
+    white-space: nowrap; /* Prevent text wrapping */
+    border-width: 0; /* No borders */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth; /* Enable smooth scroll */
+}
