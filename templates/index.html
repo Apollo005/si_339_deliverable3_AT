@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Link to CSS reset to ensure consistent styling across browsers -->
+   <link rel="stylesheet" href="css/reset.css">
+   <!-- Link to main stylesheet for custom styles -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- Link to Font Awesome for icons, specifically the search icon -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23VWxS41oE2VgG2Ibx1PRPmB84cmWkP6yZ+" crossorigin="anonymous">
+   <title>{{ site_title }}</title> <!-- Dynamic title for the page -->
+   <!-- Additional Font Awesome CDN for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body id="top"> <!-- Body with an ID for navigation purposes -->
+
+    <header>
+        <!-- Navigation button linking back to home page -->
+        <a href="index.html" class="nav-home-button">HOME</a>
+
+        <!-- Accessible search form with hidden label and icon button -->
+        <form action="#" method="get" class="search-form">
+            <label for="search-input" class="sr-only">Search Athlete</label> <!-- Screen-reader only label -->
+            <input type="text" id="search-input" placeholder="Search Athlete" name="q">
+            
+            <button type="submit" aria-label="Search"> <!-- Button with a search icon -->
+                <i class="fas fa-search"></i> <!-- Font Awesome search icon -->
+            </button>
+        </form>
+    </header>
+
+    <main>
+        <h1>{{ page_heading }}</h1> <!-- Dynamic page heading -->
+        <section class="meet-results"> <!-- Section for displaying meet results -->
+            <div class="season-box"> <!-- Box for men's results -->
+                <h2>Top 10 Men</h2>
+                <table class="table-container"> <!-- Table for displaying rankings -->
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                    </tr>
+                    <!-- Loop through men's top 10 results -->
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: gold;"></i></td> <!-- Gold trophy for 1st place -->
+                        <td><a href="athlete-bruno.html">{{ mens_top10[0]['Name'] }}</a></td> <!-- Athlete link -->
+                        <td>{{ mens_top10[0]['Time'] }}</td> <!-- Time of the athlete -->
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: silver;"></i></td> <!-- Silver trophy for 2nd place -->
+                        <td><a href="athlete-enshu.html">{{ mens_top10[1]['Name'] }}</a></td>
+                        <td>{{ mens_top10[1]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: #cd7f32;"></i></td> <!-- Bronze trophy for 3rd place -->
+                        <td><a href="athlete-dylan.html">{{ mens_top10[2]['Name'] }}</a></td>
+                        <td>{{ mens_top10[2]['Time'] }}</td>
+                    </tr>
+                    <!-- Continue for ranks 4 to 10 -->
+                    <tr>
+                        <td>4</td>
+                        <td><a href="athlete-gustaf.html">{{ mens_top10[3]['Name'] }}</a></td>
+                        <td>{{ mens_top10[3]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><a href="athlete-alex.html">{{ mens_top10[4]['Name'] }}</a></td>
+                        <td>{{ mens_top10[4]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><a href="athlete-garrett.html">{{ mens_top10[5]['Name'] }}</a></td>
+                        <td>{{ mens_top10[5]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><a href="athlete-emmett.html">{{ mens_top10[6]['Name'] }}</a></td>
+                        <td>{{ mens_top10[6]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><a href="athlete-ethan.html">{{ mens_top10[7]['Name'] }}</a></td>
+                        <td>{{ mens_top10[7]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><a href="athlete-cole.html">{{ mens_top10[8]['Name'] }}</a></td>
+                        <td>{{ mens_top10[8]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><a href="athlete-amir.html">{{ mens_top10[9]['Name'] }}</a></td>
+                        <td>{{ mens_top10[9]['Time'] }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="season-box"> <!-- Box for women's results -->
+                <h2>Top 10 Women</h2>
+                <table class="table-container"> <!-- Table for women's rankings -->
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                    </tr>
+                    <!-- Loop through women's top 10 results -->
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: gold;"></i></td> <!-- Gold trophy for 1st place -->
+                        <td><a href="athlete-irie.html">{{ womens_top10[0]['Name'] }}</a></td>
+                        <td>{{ womens_top10[0]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: silver;"></i></td> <!-- Silver trophy for 2nd place -->
+                        <td><a href="athlete-alison.html">{{ womens_top10[1]['Name'] }}</a></td>
+                        <td>{{ womens_top10[1]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: #cd7f32;"></i></td> <!-- Bronze trophy for 3rd place -->
+                        <td><a href="athlete-adrienne.html">{{ womens_top10[2]['Name'] }}</a></td>
+                        <td>{{ womens_top10[2]['Time'] }}</td>
+                    </tr>
+                    <!-- Continue for ranks 4 to 10 -->
+                    <tr>
+                        <td>4</td>
+                        <td><a href="athlete-elin.html">{{ womens_top10[3]['Name'] }}</a></td>
+                        <td>{{ womens_top10[3]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><a href="athlete-emily.html">{{ womens_top10[4]['Name'] }}</a></td>
+                        <td>{{ womens_top10[4]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><a href="athlete-alexandra.html">{{ womens_top10[5]['Name'] }}</a></td>
+                        <td>{{ womens_top10[5]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><a href="athlete-calla.html">{{ womens_top10[6]['Name'] }}</a></td>
+                        <td>{{ womens_top10[6]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><a href="athlete-ann.html">{{ womens_top10[7]['Name'] }}</a></td>
+                        <td>{{ womens_top10[7]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><a href="athlete-elsa.html">{{ womens_top10[8]['Name'] }}</a></td>
+                        <td>{{ womens_top10[8]['Time'] }}</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><a href="athlete-arabella.html">{{ womens_top10[9]['Name'] }}</a></td>
+                        <td>{{ womens_top10[9]['Time'] }}</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Buttons for toggling dark mode and high contrast mode -->
+        <button class="dark-mode-toggle">Dark Mode</button>
+        <button class="high-contrast-toggle">High Contrast</button>
+    
+        <script>
+        // Toggle Dark Mode
+        document.querySelector('.dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.remove('high-contrast-mode'); // Ensure high-contrast mode is off
+        });
+    
+        // Toggle High-Contrast Mode
+        document.querySelector('.high-contrast-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('high-contrast-mode');
+            document.body.classList.remove('dark-mode'); // Ensure dark mode is off
+        });
+            
+        </script>
+    </main>
+
+    <footer class="footer-container"> <!-- Footer section of the page -->
+        <p>Created by Kaelyn Lin, Nick Pisarczyk, and Aditya Tambe for SI 339</p> <!-- Credits for the page creators -->
+        <a href="#top" class = "top2">Back to top</a> <!-- Link to navigate back to the top of the page -->
+    </footer>
+    
+
+</body>
+</html>
