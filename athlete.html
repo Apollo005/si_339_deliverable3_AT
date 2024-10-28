@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Character encoding for the document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
-    <link rel="stylesheet" href="css/reset.css"> <!-- Link to CSS reset for consistent styling across browsers -->
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to main stylesheet for custom styles -->
-    <title>Athlete Profile - {{ athlete_name }}</title> <!-- Dynamic title for the athlete's profile page -->
-    <!-- Link to Font Awesome for icons, including the search icon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Athlete Profile - {{ athlete_name }}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
-    <header class="athlete"> <!-- Header section for the athlete profile -->
-        <a href="index.html" class="nav-home-button">HOME</a> <!-- Navigation link back to the home page -->
+    <header class="athlete">
+        <a href="index.html" class="nav-home-button">HOME</a>
         
-        <div class="profile-details"> <!-- Container for athlete details -->
-            <h1>{{ athlete_name }}</h1> <!-- Dynamic heading displaying the athlete's name -->
+        <div class="profile-details">
+            <h1>{{ athlete_name }}</h1>
         </div>
 
-        <!-- Accessible search form with hidden label and icon button -->
         <form action="#" method="get" class="search-form">
-            <label for="search-input" class="sr-only">Search Athlete</label> <!-- Screen-reader only label for accessibility -->
-            <input type="text" id="search-input" placeholder="Search Athlete" name="q"> <!-- Input field for search -->
-            <button type="submit" aria-label="Search"> <!-- Submit button with a search icon -->
-                <i class="fas fa-search"></i> <!-- Font Awesome search icon -->
+            <label for="search-input" class="sr-only">Search Athlete</label>
+            <input type="text" id="search-input" placeholder="Search Athlete" name="q">
+            <button type="submit" aria-label="Search">
+                <i class="fas fa-search"></i>
             </button>
         </form>
         
@@ -31,60 +29,59 @@
 
 <main>
 
-    <section class="profile-header"> <!-- Section for the athlete's profile header -->
-        <div class="profile-picture"> <!-- Container for athlete's profile picture -->
-            <img src="img/profile-placeholder.png" alt="Profile picture"> <!-- Placeholder image for the profile -->
+    <section class="profile-header">
+        <div class="profile-picture">
+            <img src="img/profile-placeholder.png" alt="Profile picture of {{ athlete_name }}">
         </div>
-        <div class="profile-details"> <!-- Container for additional athlete details -->
-            <p>{{ athlete_grade }}th Grade, {{ athlete_school }}</p> <!-- Dynamic details showing grade and school -->
-            <button class="photos-button">Photos</button> <!-- Button to view athlete's photos -->
+        <div class="profile-details">
+            <p>{{ athlete_grade }}th Grade, {{ athlete_school }}</p>
+            <a href="photo-{{ athlete_name | lower | replace(' ', '-') }}.html" class="photos-button">Photos</a>
         </div>
     </section>
 
-    <div class="progress-bar-container"> <!-- Container for progress bar -->
-        <div class="progress-bar" style="width: 75%;">75%</div> <!-- Progress bar showing percentage of achievement -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" style="width: 75%;">75%</div>
     </div>
 
-    <section class="meet-results"> <!-- Section for displaying race results and records -->
-        <div class="meet-year season-box"> <!-- Container for the season's races -->
-            <h2>{{ season_year }} Races</h2> <!-- Dynamic heading for the year of races -->
-            {{ races_2024_table | safe }} <!-- Inserted table displaying race results, marked safe for rendering -->
+    <section class="meet-results">
+        <div class="meet-year season-box">
+            <h2>{{ season_year }} Races</h2>
+            {{ races_2024_table | safe }}
         </div>
-        <div class="season-records season-box"> <!-- Container for season records -->
-            <h2>Season Records</h2> <!-- Heading for season records -->
-            {{ all_records_table | safe }} <!-- Inserted table displaying all records, marked safe for rendering -->
+        <div class="season-records season-box">
+            <h2>Season Records</h2>
+            {{ all_records_table | safe }}
         </div>
-        <div class="season-notes season-box"> <!-- Container for season notes -->
-            <h2>Season Notes</h2> <!-- Heading for season notes -->
+        <div class="season-notes season-box">
+            <h2>Season Notes</h2>
             <ul>
-                {{ season_notes | safe }} <!-- Inserted list of notes for the season, marked safe for rendering -->
+                {{ season_notes | safe }}
             </ul>
         </div>
     </section>
 
-    <!-- Buttons for toggling dark mode and high contrast mode -->
-    <button class="dark-mode-toggle">Dark Mode</button> <!-- Button to toggle dark mode -->
-    <button class="high-contrast-toggle">High Contrast</button> <!-- Button to toggle high contrast mode -->
+    <button class="dark-mode-toggle">Dark Mode</button>
+    <button class="high-contrast-toggle">High Contrast</button>
         
     <script>
     // Toggle Dark Mode
     document.querySelector('.dark-mode-toggle').addEventListener('click', function() {
-        document.body.classList.toggle('dark-mode'); // Toggle dark mode class on the body
-        document.body.classList.remove('high-contrast-mode'); // Ensure high-contrast mode is off
+        document.body.classList.toggle('dark-mode');
+        document.body.classList.remove('high-contrast-mode');
     });
         
     // Toggle High-Contrast Mode
     document.querySelector('.high-contrast-toggle').addEventListener('click', function() {
-        document.body.classList.toggle('high-contrast-mode'); // Toggle high-contrast mode class on the body
-        document.body.classList.remove('dark-mode'); // Ensure dark mode is off
+        document.body.classList.toggle('high-contrast-mode');
+        document.body.classList.remove('dark-mode');
     });
     </script>
 
 </main>
 
-<footer class="footer-container"> <!-- Footer section of the page -->
-    <p>Created by Kaelyn Lin, Nick Pisarczyk, and Aditya Tambe for SI 339</p> <!-- Credits for the page creators -->
-    <a href="#top">Back to top</a> <!-- Link to navigate back to the top of the page -->
+<footer class="footer-container">
+    <p>Created by Kaelyn Lin, Nick Pisarczyk, and Aditya Tambe for SI 339</p>
+    <a href="#top" class="top2">Back to top</a>
 </footer>
 
 </body>
