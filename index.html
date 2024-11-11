@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Link to CSS reset to ensure consistent styling across browsers -->
+   <link rel="stylesheet" href="css/reset.css">
+   <!-- Link to main stylesheet for custom styles -->
+   <link rel="stylesheet" href="css/style.css">
+   <!-- Link to Font Awesome for icons, specifically the search icon -->
+   <title>Men's and Women's Top 10 XC Times</title> <!-- Dynamic title for the page -->
+   <!-- Additional Font Awesome CDN for icons -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   <script src="js/search.js" defer></script>
+</head>
+<body id="top"> <!-- Body with an ID for navigation purposes -->
+
+    <header>
+        <!-- Navigation button linking back to home page -->
+        <a href="index.html" class="nav-home-button">HOME</a>
+
+        <!-- Accessible search form with hidden label and icon button -->
+        <form action="#" method="get" class="search-form">
+            <label for="search-input" class="sr-only">Search Athlete</label> <!-- Screen-reader only label -->
+            <input type="text" id="search-input" placeholder="Search Athlete" name="q">
+            
+            <button type="submit" aria-label="Search"> <!-- Button with a search icon -->
+                <i class="fas fa-search"></i> <!-- Font Awesome search icon -->
+            </button>
+        </form>
+    </header>
+
+    <main >
+        <h1>Top 10 Overall Rankings for Men and Women</h1> <!-- Dynamic page heading -->
+        <section class="meet-results"> <!-- Section for displaying meet results -->
+            <div class="season-box"> <!-- Box for men's results -->
+                <h2>Top 10 Men</h2>
+                <table class="table-container"> <!-- Table for displaying rankings -->
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                    </tr>
+                    <!-- Loop through men's top 10 results -->
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: gold;"></i></td> <!-- Gold trophy for 1st place -->
+                        <td><a href="athlete-bruno.html">Bruno Cifaldi</a></td> <!-- Athlete link -->
+                        <td>16:57.4 PR</td> <!-- Time of the athlete -->
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: silver;"></i></td> <!-- Silver trophy for 2nd place -->
+                        <td><a href="athlete-enshu.html">Enshu Kuan</a></td>
+                        <td>17:20.8 PR</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: #cd7f32;"></i></td> <!-- Bronze trophy for 3rd place -->
+                        <td><a href="athlete-dylan.html">Dylan Hanley</a></td>
+                        <td>18:13.9 PR</td>
+                    </tr>
+                    <!-- Continue for ranks 4 to 10 -->
+                    <tr>
+                        <td>4</td>
+                        <td><a href="athlete-gustaf.html">Gustaf Finn</a></td>
+                        <td>18:22.8 PR</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><a href="athlete-alex.html">Alex Nemecek</a></td>
+                        <td>18:24.0 PR</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><a href="athlete-garrett.html">Garrett Comer</a></td>
+                        <td>18:24.6 PR</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><a href="athlete-emmett.html">Emmett Strait</a></td>
+                        <td>19:41.3 PR</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><a href="athlete-ethan.html">Ethan Miller</a></td>
+                        <td>21:25.1 PR</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><a href="athlete-cole.html">Cole Harms</a></td>
+                        <td>24:34.5 PR</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><a href="athlete-amir.html">Amir Abston</a></td>
+                        <td>25:25.0 PR</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="season-box"> <!-- Box for women's results -->
+                <h2>Top 10 Women</h2>
+                <table class="table-container"> <!-- Table for women's rankings -->
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Time</th>
+                    </tr>
+                    <!-- Loop through women's top 10 results -->
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: gold;"></i></td> <!-- Gold trophy for 1st place -->
+                        <td><a href="athlete-irie.html">Irie Scrase</a></td>
+                        <td>19:08.3 PR</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: silver;"></i></td> <!-- Silver trophy for 2nd place -->
+                        <td><a href="athlete-alison.html">Alison Kauffman</a></td>
+                        <td>21:59.0 PR</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-trophy" style="color: #cd7f32;"></i></td> <!-- Bronze trophy for 3rd place -->
+                        <td><a href="athlete-adrienne.html">Adrienne Stewart</a></td>
+                        <td>22:21.2 PR</td>
+                    </tr>
+                    <!-- Continue for ranks 4 to 10 -->
+                    <tr>
+                        <td>4</td>
+                        <td><a href="athlete-elin.html">Elin Tenbrink</a></td>
+                        <td>22:30.0 PR</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><a href="athlete-emily.html">Emily Mei</a></td>
+                        <td>24:19.3 PR</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><a href="athlete-alexandra.html">Alexandra Wren</a></td>
+                        <td>24:22.1 PR</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><a href="athlete-calla.html">Calla Sopoci</a></td>
+                        <td>24:30.4 PR</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><a href="athlete-ann.html">Ann Kececi</a></td>
+                        <td>24:46.0 PR</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td><a href="athlete-elsa.html">Elsa Wenzlaff</a></td>
+                        <td>24:54.7 PR</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td><a href="athlete-arabella.html">Arabella Kessler</a></td>
+                        <td>28:52.0 PR</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Buttons for toggling dark mode and high contrast mode -->
+        <button class="dark-mode-toggle">Dark Mode</button>
+        <button class="high-contrast-toggle">High Contrast</button>
+    
+        <script>
+        // Toggle Dark Mode
+        document.querySelector('.dark-mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.remove('high-contrast-mode'); // Ensure high-contrast mode is off
+        });
+    
+        // Toggle High-Contrast Mode
+        document.querySelector('.high-contrast-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('high-contrast-mode');
+            document.body.classList.remove('dark-mode'); // Ensure dark mode is off
+        });
+            
+        </script>
+    </main>
+
+    <footer class="footer-container"> <!-- Footer section of the page -->
+        <p>Created by Kaelyn Lin, Nick Pisarczyk, and Aditya Tambe for SI 339</p> <!-- Credits for the page creators -->
+        <a href="#top" class = "top2">Back to top</a> <!-- Link to navigate back to the top of the page -->
+    </footer>
+    
+
+</body>
+</html>
